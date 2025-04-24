@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded())
 app.use(bodyParser.json())
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const PORT = process.env.PORT || 5000;
 
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,
@@ -35,7 +36,9 @@ async function getLatestGitHubRelease(owner, repo) {
   return `Latest release: ${data.name} (${data.tag_name}) - ${data.html_url}`;
 }
 
-
+app.get('/', (req, res) => {
+  res.send('Hello from OpenAI!');
+});
 
 app.post('/ask', async (req, res) => {
   const messages = req.body.messages;
@@ -129,4 +132,4 @@ app.post('/ask', async (req, res) => {
   return res.json({ reply: response.choices[0].message.content });
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
