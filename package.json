@@ -1,0 +1,27 @@
+{
+  "name": "open-ai",
+  "version": "1.0.0",
+  "description": "This is the OpenAI backend to get latest datas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/superdevp/openai-backend.git"
+  },
+  "author": "Monkey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superdevp/openai-backend/issues"
+  },
+  "homepage": "https://github.com/superdevp/openai-backend#readme",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "openai": "^4.96.0"
+  }
+}
